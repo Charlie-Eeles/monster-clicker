@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Monster from './Monster';
+import Gold from './Gold';
 import './App.css';
 import goblin from './goblin.png';
 import troll from './troll.png';
@@ -11,7 +12,8 @@ class App extends Component {
     selector: 0,
     weapon: 2,
     health: 10,
-    monsterCount: 0
+    monsterCount: 0,
+    goldCounter: 0
     }
 
    render() {
@@ -39,21 +41,41 @@ class App extends Component {
         this.setState({
           health: this.state.health - this.state.weapon
         })
-      }
+      };
 
       const randomEncounter = () => {
         const randomMonster = Math.floor(Math.random() * Math.floor(2));
         this.setState({
           selector: randomMonster
         })
-    };
+      };
 
       const monsterDefeated = () => {
         this.setState({
           monsterCount: this.state.monsterCount + 1
         })
+      };
+
+      const addGold = () => {
+        this.setState({
+          goldCounter: this.state.goldCounter + monsters[this.state.selector].goldReward
+        })
       }
+
+      const spawnMonster = () => {
+        if (this.state.health <= this.state.weapon){
+            addGold();
+            randomEncounter();
+            setHealth();
+            monsterDefeated();
+        }else{
+            dealDamage();
+        }
+    } 
+
+
       return (
+        <>
         <Monster monsters={monsters}
                  setHealth={setHealth}
                  health={this.state.health} 
@@ -63,7 +85,10 @@ class App extends Component {
                  dealDamage={dealDamage} 
                  monsterCount={this.state.monsterCount}
                  monsterDefeated={monsterDefeated}
+                 spawnMonster={spawnMonster}
                  />
+        <Gold goldCounter={this.state.goldCounter}/>
+        </>
       );
 
 }}
