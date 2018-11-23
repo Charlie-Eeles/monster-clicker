@@ -6,3 +6,7 @@
 .monsterClass:active{
   transform: scale(1.05);
 }
+
+.weaponClass{
+  height:100px;
+}

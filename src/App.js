@@ -5,8 +5,9 @@ import Weapons from './Weapons';
 import './App.css';
 import goblin from './goblin.png';
 import troll from './troll.png';
-
-
+import sword from './sword.png';
+import bow from './bow.png';
+import hammer from './hammer.png';
 
 class App extends Component {
   state = {
@@ -36,14 +37,17 @@ class App extends Component {
 
       const arsenal = [
         {weaponName: "Sword",
-         damage: 3,
-         price: 500},
+        img: sword, 
+        damage: 3,
+        price: 500},
         {weaponName: "Bow",
-         damage: 4,
-         price: 2000},
+        img:bow,
+        damage: 4,
+        price: 2000},
         {weaponName: "Hammer",
-         damage: 5,
-         price: 5000}
+        img:hammer,
+        damage: 5,
+        price: 5000}
       ]
 
 
@@ -121,6 +125,7 @@ class App extends Component {
         <Weapons weaponName={arsenal[this.state.weaponTier].weaponName}
                  buyWeapon={buyWeapon}
                  disabled={this.state.disabled}
+                 weaponImg={arsenal[this.state.weaponTier].img}
         />
         
         </>
