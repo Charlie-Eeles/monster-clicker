@@ -18,6 +18,7 @@ class App extends Component {
     goldCounter: 0,
     weaponTier:0,
     disabled: false,
+    specialAttack: false,
     party: 0,
     partyCost: 5000
     }
@@ -134,7 +135,24 @@ class App extends Component {
             partyCost: Math.ceil(this.state.partyCost * 1.5)
           })}else(console.log("you dont have enough monayy"));
       }
+      
+      const enableSpecialAttack = () => {
+        this.setState({specialAttack:false})
+      }
 
+      const specialAttack = () => {
+        if (arsenal[this.state.weaponTier].damage >=4){
+        this.setState({
+          specialAttack: true,
+          health: this.state.health - this.state.health
+        })
+          addGold();
+          randomEncounter();
+          monsterDefeated();
+          setTimeout(setHealth, 0.0001);
+          setTimeout(enableSpecialAttack, 10000)
+        }else{console.log("your weapon has no special attack")}
+      }
 
       return (
         <>
@@ -146,11 +164,10 @@ class App extends Component {
                  monsterCount={this.state.monsterCount}
                  spawnMonster={spawnMonster}
                  />
-        </div> 
+        <Gold goldCounter={this.state.goldCounter}/>
+        </div>
         <div className="rightContainer">
-        <Gold goldCounter={this.state.goldCounter}
-             
-        />
+        
         <Weapons weaponName={arsenal[this.state.weaponTier].weaponName}
                  buyWeapon={buyWeapon}
                  disabled={this.state.disabled}
@@ -159,6 +176,9 @@ class App extends Component {
                  partyCost={this.state.partyCost}
                  weaponCost={arsenal[this.state.weaponTier].price}
                  party={this.state.party}
+                 specialAttack={specialAttack}
+                 specialAttackEnabler={this.state.specialAttack}
+                 
         />
         </div>
         </div>
