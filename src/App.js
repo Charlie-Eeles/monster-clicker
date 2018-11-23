@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Monster from './Monster';
 import Gold from './Gold';
+import Weapons from './Weapons';
 import './App.css';
 import goblin from './goblin.png';
 import troll from './troll.png';
@@ -10,10 +11,12 @@ import troll from './troll.png';
 class App extends Component {
   state = {
     selector: 0,
-    weapon: 2,
+    weaponDamage: 2,
     health: 10,
     monsterCount: 0,
-    goldCounter: 0
+    goldCounter: 0,
+    weaponTier:0,
+    disabled: false
     }
 
    render() {
@@ -31,6 +34,19 @@ class App extends Component {
       img: troll,
       goldReward:1000}];
 
+      const arsenal = [
+        {weaponName: "Sword",
+         damage: 3,
+         price: 500},
+        {weaponName: "Bow",
+         damage: 4,
+         price: 2000},
+        {weaponName: "Hammer",
+         damage: 5,
+         price: 5000}
+      ]
+
+
       const setHealth = () => {
         this.setState({
           health: monsters[this.state.selector].maxHealth 
@@ -39,7 +55,7 @@ class App extends Component {
 
       const dealDamage = () => {
         this.setState({
-          health: this.state.health - this.state.weapon
+          health: this.state.health - this.state.weaponDamage
         })
       };
 
@@ -63,7 +79,7 @@ class App extends Component {
       }
 
       const spawnMonster = () => {
-        if (this.state.health <= this.state.weapon){
+        if (this.state.health <= this.state.weaponDamage){
             addGold();
             randomEncounter();
             setHealth();
@@ -71,23 +87,42 @@ class App extends Component {
         }else{
             dealDamage();
         }
-    } 
+       } 
 
+      const buyWeapon = () => {
+        if (this.state.goldCounter >= arsenal[this.state.weaponTier].price){
+          this.setState({
+            weaponDamage: arsenal[this.state.weaponTier].damage,
+            goldCounter: this.state.goldCounter - arsenal[this.state.weaponTier].price
+          })
+            if (this.state.weaponTier < arsenal.length-1){
+              this.setState({
+                weaponTier: this.state.weaponTier + 1
+             })
+          }else{
+              this.setState({
+                disabled: true
+              })
+          }}else{console.log("you don't have enough mulah")}
+        }
+      
 
       return (
         <>
         <Monster monsters={monsters}
-                 setHealth={setHealth}
                  health={this.state.health} 
-                 selector={this.state.selector} 
-                 randomEncounter={randomEncounter} 
-                 weapon={this.state.weapon} 
-                 dealDamage={dealDamage} 
+                 selector={this.state.selector}
                  monsterCount={this.state.monsterCount}
-                 monsterDefeated={monsterDefeated}
                  spawnMonster={spawnMonster}
                  />
-        <Gold goldCounter={this.state.goldCounter}/>
+        <Gold goldCounter={this.state.goldCounter}
+              
+        />
+        <Weapons weaponName={arsenal[this.state.weaponTier].weaponName}
+                 buyWeapon={buyWeapon}
+                 disabled={this.state.disabled}
+        />
+        
         </>
       );
 
