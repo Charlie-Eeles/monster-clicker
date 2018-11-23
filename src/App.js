@@ -147,7 +147,7 @@ class App extends Component {
                  spawnMonster={spawnMonster}
                  />
         </div> 
-        <div class="rightContainer">
+        <div className="rightContainer">
         <Gold goldCounter={this.state.goldCounter}
              
         />
