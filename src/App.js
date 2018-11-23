@@ -13,11 +13,13 @@ class App extends Component {
   state = {
     selector: 0,
     weaponDamage: 2,
-    health: 10,
+    health: 20,
     monsterCount: 0,
     goldCounter: 0,
     weaponTier:0,
-    disabled: false
+    disabled: false,
+    party: 0,
+    partyCost: 5000
     }
 
    render() {
@@ -25,13 +27,13 @@ class App extends Component {
     const monsters = [
       {name: "goblin",
       key: 0,
-      maxHealth:10,
+      maxHealth:20,
       img: goblin,
-      goldReward: 500},
+      goldReward: 750},
 
       {name:"troll", 
       key: 1,
-      maxHealth:15,
+      maxHealth:30,
       img: troll,
       goldReward:1000}];
 
@@ -43,11 +45,11 @@ class App extends Component {
         {weaponName: "Bow",
         img:bow,
         damage: 4,
-        price: 2000},
+        price: 10000},
         {weaponName: "Hammer",
         img:hammer,
         damage: 5,
-        price: 5000}
+        price: 20000}
       ]
 
 
@@ -110,6 +112,28 @@ class App extends Component {
           }}else{console.log("you don't have enough mulah")}
         }
       
+      const partyCount = () => {
+        this.setState({
+          health: this.state.health - this.state.party 
+        })
+        if (this.state.health <= this.state.party){
+            addGold();
+            randomEncounter();
+            setHealth();
+            monsterDefeated();
+        }
+      }
+
+      const partyMember = () => {
+        if (this.state.goldCounter >= this.state.partyCost){
+          if(this.state.party === 0){setInterval(partyCount, 3000)}
+          this.setState({
+            goldCounter: this.state.goldCounter - this.state.partyCost,
+            party: this.state.party +1,
+            partyCost: Math.ceil(this.state.partyCost * 1.5)
+          })}else(console.log("you dont have enough monayy"));
+      }
+
 
       return (
         <>
@@ -126,6 +150,10 @@ class App extends Component {
                  buyWeapon={buyWeapon}
                  disabled={this.state.disabled}
                  weaponImg={arsenal[this.state.weaponTier].img}
+                 partyMember={partyMember}
+                 partyCost={this.state.partyCost}
+                 weaponCost={arsenal[this.state.weaponTier].price}
+                 party={this.state.party}
         />
         
         </>
