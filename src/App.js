@@ -113,15 +113,16 @@ class App extends Component {
         }
       
       const partyCount = () => {
+        if (this.state.health <= this.state.party){
+          addGold();
+          randomEncounter();
+          setHealth();
+          monsterDefeated();
+        }else{
         this.setState({
           health: this.state.health - this.state.party 
-        })
-        if (this.state.health <= this.state.party){
-            addGold();
-            randomEncounter();
-            setHealth();
-            monsterDefeated();
-        }
+        })}
+        
       }
 
       const partyMember = () => {
@@ -137,14 +138,18 @@ class App extends Component {
 
       return (
         <>
+        <div className="mainContainer">
+        <div className="leftContainer">
         <Monster monsters={monsters}
                  health={this.state.health} 
                  selector={this.state.selector}
                  monsterCount={this.state.monsterCount}
                  spawnMonster={spawnMonster}
                  />
+        </div> 
+        <div class="rightContainer">
         <Gold goldCounter={this.state.goldCounter}
-              
+             
         />
         <Weapons weaponName={arsenal[this.state.weaponTier].weaponName}
                  buyWeapon={buyWeapon}
@@ -155,7 +160,8 @@ class App extends Component {
                  weaponCost={arsenal[this.state.weaponTier].price}
                  party={this.state.party}
         />
-        
+        </div>
+        </div>
         </>
       );
 
