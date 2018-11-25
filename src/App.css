@@ -1,4 +1,11 @@
-
+*{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
 
 .monsterClass{
   height:500px;
@@ -9,10 +16,30 @@
   transform: scale(1.05);
 }
 
+
 .weaponClass{
   height:100px;
 }
 
+/* .rightContainer button {
+  width:200px;
+  border-radius:10%;
+  background-color:lightcoral;
+  border: none;
+  outline: none;
+  cursor:pointer;
+} */
+
+/* .hirePartyClass{
+  height:100px;
+  margin-top:10px;
+}
+
+.buyWeaponClass {
+  
+  height:150px;
+}  */
+/* 
 .mainContainer{
   margin:0;
   padding:0;
@@ -46,14 +73,6 @@
   margin-left: 10px;
   border-radius:5%;
 }
+*/
 
-.hirePartyClass{
-  height:100px;
-  margin-top:10px;
-}
-
-.buyWeaponClass {
-  
-  height:150px;
-}
 
