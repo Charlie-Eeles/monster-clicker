@@ -3,7 +3,7 @@ const SpecialAttack = (props) => {
     
     
     return(
-        <button onClick={props.specialAttack} disabled={props.specialAttackEnabler} className="hirePartyClass">special attack</button>
+        <button onClick={props.specialAttack} disabled={props.specialAttackEnabler} className="special-attack">special attack</button>
     )
 
 

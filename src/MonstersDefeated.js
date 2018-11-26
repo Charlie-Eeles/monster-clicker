@@ -7,7 +7,7 @@ const MonstersDefeated = (props) => {
 
     return(
         
-        <p>monsters defeated: {props.monsterCount}</p>
+        <p>Monsters Defeated: {props.monsterCount}</p>
         
     );
 

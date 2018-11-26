@@ -1,14 +1,17 @@
-*{
+body{
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #1a1b29;
+  font-family: 'Roboto', sans-serif;
 }
 
 .monsterClass{
-  height:500px;
+  height:400px;
   outline: none;
 }
 
@@ -21,58 +24,135 @@
   height:100px;
 }
 
-/* .rightContainer button {
-  width:200px;
-  border-radius:10%;
-  background-color:lightcoral;
-  border: none;
-  outline: none;
-  cursor:pointer;
-} */
-
-/* .hirePartyClass{
-  height:100px;
+.main-flex-container{
+  display:flex;
+  flex-direction:column;
+  margin: 0 auto;
+  width:95%;
+  text-align:center;
+  background-color: #1a1b29; 
+  color: #1a1b29;
   margin-top:10px;
 }
 
-.buyWeaponClass {
-  
-  height:150px;
-}  */
-/* 
-.mainContainer{
-  margin:0;
-  padding:0;
-  display:flex;
-  direction: row;
-  width: 100%;
-  height:100vh;
+.monster-display{
+  width:100%;
+  padding-top:15px;
+  background: url("https://scentofagamer.files.wordpress.com/2015/02/mtgswamp_theros_stevenbelledin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-size:1.4rem;
+}
+
+.shop-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns: 20fr 20fr;
+  background-color: #1a1b29; 
+  align-content:center;
+  padding-top:10px;
+  grid-column-gap: 5px;
+}
+
+button{
+  margin: 2px 0;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  color: #22223b;
+  background-color: #E1CDB3;
+  cursor: pointer;
+  outline:none;
   font-family: 'Roboto', sans-serif;
+  font-size:1rem;
 }
 
-.leftContainer{
-  padding-left:300px;
-  width:50%;
-  text-align: center;
-  padding-top: 5%;
-  margin: 0 auto;
-  font-size: 1.5rem;
+button:active{
+  transform: scale(0.99);
 }
 
-.rightContainer{
-  padding-right:300px;
-  width:50%;
-  text-align:center;
+
+
+p{
+  margin:0.7rem 0;
+}
+
+.first-stat{
+  margin-top:5%;
+}
+
+.stat-box{
+  background-color:rgba(225,205,179,0.7);
+  width:100%;
   margin:0 auto;
-  padding-top: 10%;
-  font-size:1.5rem;
+  border-radius:10px;
+  padding-top:2px;
+  padding-bottom:2px;
 }
 
-.rightContainer button {
-  width:200px;
-  margin-left: 10px;
-  border-radius:5%;
+.special-attack{
+  width:100%;
+  margin-top:5px;
 }
-*/
 
+button[disabled=disabled], button:disabled {
+  background-color: rgba(225,205,179,0.5);
+}
 
+@media only screen and (min-width: 800px){
+  .main-flex-container{
+    flex-direction:row;
+    width:90%;
+    justify-content: space-between;
+    margin-top:3vh;
+  }
+
+  .monsterClass{
+    height:500px;
+    margin-top:10vh;
+  }
+
+  .monster-display{
+    width:90%;
+    height:60vh;
+    margin-right:10px;
+    border-radius:7px;
+  }
+
+  .shop-grid{
+    width:70%;
+    padding: 0 40px;
+    background-color: #D6BB97;
+    border-radius:7px;
+    grid-column-gap: 10px;
+  }
+  
+}
+
+@media only screen and (min-width: 1200px){
+
+  .monster-display{
+    height: 90vh;
+    border: solid 5px #E1CDB3;
+  }
+
+  .monsterClass{
+    margin-top:13vh;
+    padding-bottom:2%;
+  }
+
+  .main-flex-container{
+    margin-top:4vh;
+    width:80%;
+  }
+
+  
+
+  .stat-box{
+    width:50%;
+    padding-top:3px;
+    padding-bottom:3px;
+    font-weight:bold;
+  }
+}
