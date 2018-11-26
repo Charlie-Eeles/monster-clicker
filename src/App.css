@@ -109,8 +109,7 @@ button[disabled=disabled], button:disabled {
   }
 
   .monsterClass{
-    height:500px;
-    margin-top:10vh;
+    height:350px;
   }
 
   .monster-display{
@@ -128,6 +127,22 @@ button[disabled=disabled], button:disabled {
     grid-column-gap: 10px;
   }
   
+  .stat-box{
+    width:80%;
+  }
+}
+
+@media only screen and (min-width: 1000px){
+
+  .monster-display{
+    width:90%;
+    height:90vh;
+  }
+
+  .monsterClass{
+    margin-top:9vh;
+    height:400px;
+  }
 }
 
 @media only screen and (min-width: 1200px){
@@ -138,8 +153,9 @@ button[disabled=disabled], button:disabled {
   }
 
   .monsterClass{
-    margin-top:13vh;
+    margin-top:7vh;
     padding-bottom:2%;
+    height:400px;
   }
 
   .main-flex-container{
@@ -147,7 +163,6 @@ button[disabled=disabled], button:disabled {
     width:80%;
   }
 
-  
 
   .stat-box{
     width:50%;
@@ -155,4 +170,20 @@ button[disabled=disabled], button:disabled {
     padding-bottom:3px;
     font-weight:bold;
   }
+}
+
+@media only screen and (min-width: 1400px){
+  .monsterClass{
+    height:500px;
+    margin-top:11vh;
+  }
+
+}
+
+@media only screen and (min-width:2000px){
+  .monsterClass{
+    height:600px;
+    margin-top:13vh;
+  }
+
 }
