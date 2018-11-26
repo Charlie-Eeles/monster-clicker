@@ -20,19 +20,19 @@ self.__precacheManifest = [
     "url": "/monster-clicker/static/js/runtime~main.88cbb6aa.js"
   },
   {
-    "revision": "04fc7e6aea0924087d81",
-    "url": "/monster-clicker/static/js/main.04fc7e6a.chunk.js"
+    "revision": "61c0714f26082c3d13ef",
+    "url": "/monster-clicker/static/js/main.61c0714f.chunk.js"
   },
   {
     "revision": "10781889b59d001711e5",
     "url": "/monster-clicker/static/js/1.10781889.chunk.js"
   },
   {
-    "revision": "04fc7e6aea0924087d81",
-    "url": "/monster-clicker/static/css/main.c291febc.chunk.css"
+    "revision": "61c0714f26082c3d13ef",
+    "url": "/monster-clicker/static/css/main.5fdb704e.chunk.css"
   },
   {
-    "revision": "199fc83083389ae19ea4afe24970a35f",
+    "revision": "40717e7f0222dc5774dc8960d3690911",
     "url": "/monster-clicker/index.html"
   }
 ];
