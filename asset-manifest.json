@@ -1,7 +1,7 @@
 {
-  "main.css": "/monster-clicker/static/css/main.5fdb704e.chunk.css",
-  "main.js": "/monster-clicker/static/js/main.61c0714f.chunk.js",
-  "main.js.map": "/monster-clicker/static/js/main.61c0714f.chunk.js.map",
+  "main.css": "/monster-clicker/static/css/main.8076de92.chunk.css",
+  "main.js": "/monster-clicker/static/js/main.ba421b8b.chunk.js",
+  "main.js.map": "/monster-clicker/static/js/main.ba421b8b.chunk.js.map",
   "static/js/1.10781889.chunk.js": "/monster-clicker/static/js/1.10781889.chunk.js",
   "static/js/1.10781889.chunk.js.map": "/monster-clicker/static/js/1.10781889.chunk.js.map",
   "runtime~main.js": "/monster-clicker/static/js/runtime~main.88cbb6aa.js",
@@ -10,8 +10,8 @@
   "static/media/sword.png": "/monster-clicker/static/media/sword.6a24fc05.png",
   "static/media/hammer.png": "/monster-clicker/static/media/hammer.85962d86.png",
   "static/media/troll.png": "/monster-clicker/static/media/troll.be4a5406.png",
-  "static/css/main.5fdb704e.chunk.css.map": "/monster-clicker/static/css/main.5fdb704e.chunk.css.map",
+  "static/css/main.8076de92.chunk.css.map": "/monster-clicker/static/css/main.8076de92.chunk.css.map",
   "index.html": "/monster-clicker/index.html",
-  "precache-manifest.ee1a46c3353b7311855958db07b0da15.js": "/monster-clicker/precache-manifest.ee1a46c3353b7311855958db07b0da15.js",
+  "precache-manifest.e81bb99ab4443eae46df0de071a43935.js": "/monster-clicker/precache-manifest.e81bb99ab4443eae46df0de071a43935.js",
   "service-worker.js": "/monster-clicker/service-worker.js"
 }
