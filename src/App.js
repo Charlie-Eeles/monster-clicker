@@ -9,9 +9,18 @@ import PartyMember from './PartyMember';
 import SpecialAttack from './SpecialAttack';
 import goblin from './goblin.png';
 import troll from './troll.png';
+import demon from './demon.png';
+import general from './general.png';
+import hillGiant from './hillGiant.png';
+import iceGiant from './iceGiant.png';
+import skeleton from './skeleton.png';
 import sword from './sword.png';
 import bow from './bow.png';
 import hammer from './hammer.png';
+import battleAxe from './battleAxe.png';
+import scimitar from './scimitar.png';
+import greatAxe from './greatAxe.png';
+import godSword from './godSword.png';
 
 
 class App extends Component {
@@ -25,7 +34,8 @@ class App extends Component {
     disabled: false,
     specialAttack: false,
     party: 0,
-    partyCost: 5000
+    partyCost: 5000,
+    death:false
     }
 
   render() {
@@ -41,21 +51,74 @@ class App extends Component {
       key: 1,
       maxHealth:30,
       img: troll,
-      goldReward:1000}];
+      goldReward:1000},
+    
+      {name:"skeleton", 
+      key: 2,
+      maxHealth:40,
+      img: skeleton,
+      goldReward:1500},
+    
+      {name:"hillGiant", 
+      key: 3,
+      maxHealth:50,
+      img: hillGiant,
+      goldReward:2000},
+    
+      {name:"iceGiant", 
+      key: 4,
+      maxHealth:60,
+      img: iceGiant,
+      goldReward:3000},
+    
+      {name:"demon", 
+      key: 5,
+      maxHealth:80,
+      img: demon,
+      goldReward:5000},
+    
+      {name:"general", 
+      key: 6,
+      maxHealth:100,
+      img: general,
+      goldReward:10000}];
 
     const arsenal = [
       {weaponName: "Sword",
       img: sword, 
       damage: 3,
       price: 500},
+
       {weaponName: "Bow",
       img:bow,
       damage: 4,
       price: 10000},
+
       {weaponName: "Hammer",
       img:hammer,
       damage: 5,
-      price: 20000}
+      price: 20000},
+
+      {weaponName: "scimitar",
+      img: scimitar, 
+      damage: 6,
+      price: 40000},
+
+      {weaponName: "battleAxe",
+      img:battleAxe,
+      damage: 7,
+      price: 80000},
+
+      {weaponName: "greatAxe",
+      img: greatAxe, 
+      damage: 10,
+      price: 150000},
+
+      {weaponName: "godSword",
+      img:godSword,
+      damage: 15,
+      price: 300000},
+      
     ]
 
     // Primary State Changing Functions (Directly updates 1 state)//
@@ -74,7 +137,10 @@ class App extends Component {
     };
 
     const randomEncounter = () => {
-      const randomMonster = Math.floor(Math.random() * Math.floor(2));
+      let randomMonster = Math.floor(Math.random() * Math.floor(4));
+      if ((this.state.monsterCount+1)%5 === 0 && this.state.monsterCount !== 0){
+        randomMonster += 3;
+      }
       this.setState({
         selector: randomMonster
       })
