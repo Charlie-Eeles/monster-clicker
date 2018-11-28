@@ -104,7 +104,17 @@ button[disabled=disabled], button:disabled {
   cursor:default;
 }
 
+.underline{
+  text-decoration:underline;
+}
 
+hr {
+  border: 1px solid #C0A887;
+}
+
+.nav-button{
+  display:none;
+}
 
 @media only screen and (min-width: 800px){
   .main-flex-container{
@@ -141,6 +151,12 @@ button[disabled=disabled], button:disabled {
   
   .stat-box{
     width:80%;
+  }
+
+  .nav-button{
+    display:inline-block;
+    margin: 20px 10px 10px;
+    width:20%;
   }
 }
 
