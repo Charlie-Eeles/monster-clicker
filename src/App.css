@@ -45,13 +45,16 @@ body{
   font-size:1.4rem;
 }
 
-.shop-grid{
+.right-section{
   width:100%;
+  background-color: #1a1b29;
+}
+
+.shop-grid{
+  
   display:grid;
   grid-template-columns: 20fr 20fr;
-  background-color: #1a1b29; 
   align-content:center;
-  padding-top:10px;
   grid-column-gap: 5px;
 }
 
@@ -101,6 +104,8 @@ button[disabled=disabled], button:disabled {
   cursor:default;
 }
 
+
+
 @media only screen and (min-width: 800px){
   .main-flex-container{
     flex-direction:row;
@@ -121,12 +126,17 @@ button[disabled=disabled], button:disabled {
     border-radius:7px;
   }
 
-  .shop-grid{
+  .right-section{
     width:70%;
-    padding: 0 40px;
     background-color: #D6BB97;
     border-radius:7px;
+    padding: 0 40px;
+    
+  }
+
+  .shop-grid{
     grid-column-gap: 10px;
+    padding-top:30vh;
   }
   
   .stat-box{

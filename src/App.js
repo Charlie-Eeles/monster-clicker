@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Monster from './Monster';
 import Gold from './Gold';
-import Weapons from './Weapons';
 import MonstersDefeated from './MonstersDefeated';
 import Health from './Health';
-import PartyMember from './PartyMember';
 import SpecialAttack from './SpecialAttack';
+import Shop from './Shop';
+import About from './About';
 import goblin from './goblin.png';
 import troll from './troll.png';
 import demon from './demon.png';
@@ -21,7 +21,7 @@ import battleAxe from './battleAxe.png';
 import scimitar from './scimitar.png';
 import greatAxe from './greatAxe.png';
 import godSword from './godSword.png';
-
+import {Route, Link, BrowserRouter as Router} from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -240,9 +240,30 @@ class App extends Component {
       }
       } 
 
+    const shopWithProps = () => {
+      return (
+        <Shop 
+          weaponName={arsenal[this.state.weaponTier].weaponName}
+            buyWeapon={buyWeapon}
+            disabled={this.state.disabled}
+            weaponImg={arsenal[this.state.weaponTier].img}
+            weaponCost={arsenal[this.state.weaponTier].price}
+            partyMember={partyMember}
+            partyCost={this.state.partyCost}
+            party={this.state.party}
+        />
+      );
+    }
 
+    const aboutPage = () => {
+      return (
+        <About/>
+      )
+    }
+
+    
     return (
-      <>
+      <Router>
       <div className="main-flex-container">
         <div className="monster-display">
           <Monster 
@@ -261,23 +282,13 @@ class App extends Component {
               goldCounter={this.state.goldCounter}/>
           </div>
         </div>
-        <div className="shop-grid">
-          <Weapons 
-            weaponName={arsenal[this.state.weaponTier].weaponName}
-            buyWeapon={buyWeapon}
-            disabled={this.state.disabled}
-            weaponImg={arsenal[this.state.weaponTier].img}
-            weaponCost={arsenal[this.state.weaponTier].price}/>
-          
-          <PartyMember  
-            partyMember={partyMember}
-            partyCost={this.state.partyCost}
-            party={this.state.party}/>
+        <Route exact path='/' component={shopWithProps}/>
+        <Route path='/other' component={aboutPage}/>
         </div>
-      </div>
-      </>
+      </Router>
     );
 
 }}
+
 
 export default App;
