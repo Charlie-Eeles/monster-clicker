@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/monster-clicker/static/media/hillGiant.e0388af6.png"
   },
   {
-    "revision": "38a2b6e745f2e4c71582",
+    "revision": "39c85f60c9dfc7db478d",
     "url": "/monster-clicker/static/css/main.cd94c1a2.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/monster-clicker/static/media/general.a86f3577.png"
   },
   {
-    "revision": "38a2b6e745f2e4c71582",
-    "url": "/monster-clicker/static/js/main.38a2b6e7.chunk.js"
+    "revision": "39c85f60c9dfc7db478d",
+    "url": "/monster-clicker/static/js/main.39c85f60.chunk.js"
   },
   {
     "revision": "fa605a05127891f5200a9ea62bf3f17c",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/monster-clicker/static/media/godSword.94e5a4c9.png"
   },
   {
-    "revision": "da30e0b2a6391864a07fd39ca3a2362e",
+    "revision": "d5489785611828725d6942bafe9d6053",
     "url": "/monster-clicker/index.html"
   }
 ];
