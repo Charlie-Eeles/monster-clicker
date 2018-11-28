@@ -282,8 +282,8 @@ class App extends Component {
               goldCounter={this.state.goldCounter}/>
           </div>
         </div>
-        <Route exact path='/' component={shopWithProps}/>
-        <Route path='/other' component={aboutPage}/>
+        <Route exact path={process.env.PUBLIC_URL + '/'} component={shopWithProps}/>
+        <Route path={process.env.PUBLIC_URL + '/other'} component={aboutPage}/>
         </div>
       </Router>
     );
