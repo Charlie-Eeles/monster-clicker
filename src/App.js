@@ -219,7 +219,7 @@ class App extends Component {
         this.setState((prevState) => ({
           goldCounter: prevState.goldCounter - prevState.partyCost,
           party: prevState.party +1,
-          partyCost: Math.ceil(prevState.partyCost * 1.2)
+          partyCost: Math.ceil(prevState.partyCost * 1.3)
         }))
         localStorage.setItem("goldCounter", this.state.goldCounter - this.state.partyCost);
         localStorage.setItem("party", this.state.party +1);
