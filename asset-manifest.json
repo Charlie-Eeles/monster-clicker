@@ -1,7 +1,7 @@
 {
   "main.css": "/monster-clicker/static/css/main.cd94c1a2.chunk.css",
-  "main.js": "/monster-clicker/static/js/main.f97de007.chunk.js",
-  "main.js.map": "/monster-clicker/static/js/main.f97de007.chunk.js.map",
+  "main.js": "/monster-clicker/static/js/main.f9e3bf82.chunk.js",
+  "main.js.map": "/monster-clicker/static/js/main.f9e3bf82.chunk.js.map",
   "static/js/1.843104cb.chunk.js": "/monster-clicker/static/js/1.843104cb.chunk.js",
   "static/js/1.843104cb.chunk.js.map": "/monster-clicker/static/js/1.843104cb.chunk.js.map",
   "runtime~main.js": "/monster-clicker/static/js/runtime~main.88cbb6aa.js",
@@ -19,6 +19,6 @@
   "static/media/troll.png": "/monster-clicker/static/media/troll.be4a5406.png",
   "static/css/main.cd94c1a2.chunk.css.map": "/monster-clicker/static/css/main.cd94c1a2.chunk.css.map",
   "index.html": "/monster-clicker/index.html",
-  "precache-manifest.a1923cea290adc83f86141884eb55f6b.js": "/monster-clicker/precache-manifest.a1923cea290adc83f86141884eb55f6b.js",
+  "precache-manifest.2f7b622f0e3438b572ef1a5dad7a1d57.js": "/monster-clicker/precache-manifest.2f7b622f0e3438b572ef1a5dad7a1d57.js",
   "service-worker.js": "/monster-clicker/service-worker.js"
 }
