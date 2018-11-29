@@ -1,7 +1,7 @@
 {
-  "main.css": "/monster-clicker/static/css/main.7187638b.chunk.css",
-  "main.js": "/monster-clicker/static/js/main.4a2b32f5.chunk.js",
-  "main.js.map": "/monster-clicker/static/js/main.4a2b32f5.chunk.js.map",
+  "main.css": "/monster-clicker/static/css/main.8c55715f.chunk.css",
+  "main.js": "/monster-clicker/static/js/main.9909a3fc.chunk.js",
+  "main.js.map": "/monster-clicker/static/js/main.9909a3fc.chunk.js.map",
   "static/js/1.bbf98bf2.chunk.js": "/monster-clicker/static/js/1.bbf98bf2.chunk.js",
   "static/js/1.bbf98bf2.chunk.js.map": "/monster-clicker/static/js/1.bbf98bf2.chunk.js.map",
   "runtime~main.js": "/monster-clicker/static/js/runtime~main.88cbb6aa.js",
@@ -19,8 +19,8 @@
   "static/media/hammer.png": "/monster-clicker/static/media/hammer.85962d86.png",
   "static/media/scimitar.png": "/monster-clicker/static/media/scimitar.763c9745.png",
   "static/media/poisonVial.png": "/monster-clicker/static/media/poisonVial.8a5c907f.png",
-  "static/css/main.7187638b.chunk.css.map": "/monster-clicker/static/css/main.7187638b.chunk.css.map",
+  "static/css/main.8c55715f.chunk.css.map": "/monster-clicker/static/css/main.8c55715f.chunk.css.map",
   "index.html": "/monster-clicker/index.html",
-  "precache-manifest.d18ec3680b0942dcdd48c03d9495aabc.js": "/monster-clicker/precache-manifest.d18ec3680b0942dcdd48c03d9495aabc.js",
+  "precache-manifest.75153c17b4c998a822eed6126e7ea72f.js": "/monster-clicker/precache-manifest.75153c17b4c998a822eed6126e7ea72f.js",
   "service-worker.js": "/monster-clicker/service-worker.js"
 }
