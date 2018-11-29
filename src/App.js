@@ -23,20 +23,25 @@ import greatAxe from './greatAxe.png';
 import godSword from './godSword.png';
 import {Route, Link, BrowserRouter as Router} from 'react-router-dom';
 
+
+
 class App extends Component {
   state = {
-    selector: 0,
-    weaponDamage: 2,
-    health: 20,
-    monsterCount: 0,
-    goldCounter: 0,
-    weaponTier:0,
-    disabled: false,
+    selector:parseInt(localStorage.getItem("selector")) || 0,
+    weaponDamage: parseInt(localStorage.getItem("weaponDamage")) || 2,
+    health: parseInt(localStorage.getItem("health")) || 20,
+    monsterCount: parseInt(localStorage.getItem("monsterCount")) || 0,
+    goldCounter: parseInt(localStorage.getItem("goldCounter")) || 0,
+    weaponTier: parseInt(localStorage.getItem("weaponTier")) || 0,
+    disabled: localStorage.getItem("disabled") || false,
     specialAttack: false,
-    party: 0,
-    partyCost: 5000,
-    death:false
+    party: parseInt(localStorage.getItem("party")) || 0,
+    partyCost: parseInt(localStorage.getItem("partyCost")) || 5000,
+    partyCheck: false
     }
+
+    
+
 
   render() {
 
@@ -144,18 +149,22 @@ class App extends Component {
       this.setState({
         selector: randomMonster
       })
+      localStorage.setItem("selector", randomMonster);
+      localStorage.setItem("health", monsters[randomMonster].maxHealth);
     };
 
     const monsterDefeated = () => {
       this.setState((prevState) => ({
         monsterCount: prevState.monsterCount + 1
       }))
+      localStorage.setItem("monsterCount", this.state.monsterCount +1);
     };
 
     const addGold = () => {
       this.setState((prevState) => ({
         goldCounter: prevState.goldCounter + monsters[prevState.selector].goldReward
       }))
+      localStorage.setItem("goldCounter", this.state.goldCounter + monsters[this.state.selector].goldReward);
     }
 
     const enableSpecialAttack = () => {
@@ -178,23 +187,40 @@ class App extends Component {
             this.setState((prevState) => ({
               weaponTier: prevState.weaponTier + 1
             }))
+            localStorage.setItem("weaponTier", this.state.weaponTier +1);
+            localStorage.setItem("weaponDamage", arsenal[this.state.weaponTier].damage);
+            localStorage.setItem("goldCounter", this.state.goldCounter - arsenal[this.state.weaponTier].price);
         }else{
             this.setState({
               disabled: true
             })
+            localStorage.setItem("weaponDamage", arsenal[this.state.weaponTier].damage);
+            localStorage.setItem("goldCounter", this.state.goldCounter - arsenal[this.state.weaponTier].price);
+            localStorage.setItem("disabled", true);
         }}else{console.log("you don't have enough mulah")}
       }
 
-
+      
     const partyMember = () => {
       if (this.state.goldCounter >= this.state.partyCost){
-        if(this.state.party === 0){setInterval(partyCount, 3000)}
+        if(this.state.party === 0 && this.state.partyCheck === false){
+          this.setState({partyCheck: true})
+          setInterval(partyCount, 3000)}
         this.setState((prevState) => ({
           goldCounter: prevState.goldCounter - prevState.partyCost,
           party: prevState.party +1,
-          partyCost: Math.ceil(prevState.partyCost * 1.5)
-        }))}else(console.log("you dont have enough monayy"));
+          partyCost: Math.ceil(prevState.partyCost * 1.2)
+        }))
+        localStorage.setItem("goldCounter", this.state.goldCounter - this.state.partyCost);
+        localStorage.setItem("party", this.state.party +1);
+        localStorage.setItem("partyCost", Math.ceil((this.state.partyCost) * 1.5));
+        }else(console.log("you dont have enough monayy"));
     }  
+
+    const partyStart = () => {if(this.state.party > 0 && this.state.partyCheck === false){
+      this.setState({partyCheck: true})
+      setInterval(partyCount, 3000)}}
+    
 
 
     const partyCount = () => {
@@ -206,7 +232,6 @@ class App extends Component {
       }))}
       
     }
-
 
     const specialAttack = () => {
       if (arsenal[this.state.weaponTier].damage >4){
@@ -221,6 +246,22 @@ class App extends Component {
       }else{console.log("your weapon has no special attack")}
     }
     
+    const reset = () => {
+      this.setState({
+        selector:0,
+        weaponDamage:2,
+        health:20,
+        monsterCount:0,
+        goldCounter:0,
+        weaponTier:0,
+        disabled:false,
+        specialAttack: false,
+        party:0,
+        partyCost:5000,
+        partyCheck: false
+      })
+    }
+
 
     // Tertiary State Changing Functions (Does not use setState method) //
 
@@ -251,10 +292,13 @@ class App extends Component {
             partyMember={partyMember}
             partyCost={this.state.partyCost}
             party={this.state.party}
+            reset={reset}
         />
       );
     }
 
+    
+    
     const aboutPage = () => {
       return (
         <About/>
@@ -265,6 +309,7 @@ class App extends Component {
     return (
       <Router>
       <div className="main-flex-container">
+      {partyStart()}
         <div className="monster-display">
           <Monster 
             monsters={monsters}
@@ -287,8 +332,11 @@ class App extends Component {
         </div>
       </Router>
     );
+  
+    
+}
 
-}}
+}
 
 
 export default App;

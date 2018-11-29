@@ -25,6 +25,7 @@ const Shop = (props) => {
                     partyCost={props.partyCost}
                     party={props.party}/>
             </div>
+            <button onClick={props.reset}>reset</button>
         </div>
         </>
     );
