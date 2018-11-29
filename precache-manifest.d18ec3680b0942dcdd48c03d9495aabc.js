@@ -1,19 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "e0388af62be225877024f72df28975f8",
-    "url": "/monster-clicker/static/media/hillGiant.e0388af6.png"
+    "revision": "a86f3577b27e7927d624a5e7fe425f66",
+    "url": "/monster-clicker/static/media/general.a86f3577.png"
   },
   {
-    "revision": "4835957ea97a0304dbc1",
-    "url": "/monster-clicker/static/css/main.cd94c1a2.chunk.css"
+    "revision": "4a2b32f5bfdf7f1527e4",
+    "url": "/monster-clicker/static/css/main.7187638b.chunk.css"
   },
   {
-    "revision": "843104cbe3202a1d045c",
-    "url": "/monster-clicker/static/js/1.843104cb.chunk.js"
+    "revision": "bbf98bf22b3aee78a6d8",
+    "url": "/monster-clicker/static/js/1.bbf98bf2.chunk.js"
   },
   {
     "revision": "88cbb6aa3eab1e5d4aa9",
     "url": "/monster-clicker/static/js/runtime~main.88cbb6aa.js"
+  },
+  {
+    "revision": "44a61f2a1bd07bcfab088864666ae2c0",
+    "url": "/monster-clicker/static/media/partyImg.44a61f2a.png"
+  },
+  {
+    "revision": "8a5c907f381a331466a4f81332c81ffe",
+    "url": "/monster-clicker/static/media/poisonVial.8a5c907f.png"
   },
   {
     "revision": "6cc274ebcfc740c08226be9de6d51f50",
@@ -28,12 +36,12 @@ self.__precacheManifest = [
     "url": "/monster-clicker/static/media/demon.857ca2f9.png"
   },
   {
-    "revision": "a86f3577b27e7927d624a5e7fe425f66",
-    "url": "/monster-clicker/static/media/general.a86f3577.png"
+    "revision": "4a2b32f5bfdf7f1527e4",
+    "url": "/monster-clicker/static/js/main.4a2b32f5.chunk.js"
   },
   {
-    "revision": "4835957ea97a0304dbc1",
-    "url": "/monster-clicker/static/js/main.4835957e.chunk.js"
+    "revision": "e0388af62be225877024f72df28975f8",
+    "url": "/monster-clicker/static/media/hillGiant.e0388af6.png"
   },
   {
     "revision": "fa605a05127891f5200a9ea62bf3f17c",
@@ -60,7 +68,7 @@ self.__precacheManifest = [
     "url": "/monster-clicker/static/media/godSword.94e5a4c9.png"
   },
   {
-    "revision": "612b0547328102ccd6a6dff6634afc86",
+    "revision": "bb76bbbd7007719bc873d349cbe8f4ee",
     "url": "/monster-clicker/index.html"
   }
 ];
