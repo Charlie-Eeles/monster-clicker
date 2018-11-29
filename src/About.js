@@ -22,8 +22,8 @@ const About = (props) => {
             <p>I wanted to make something in React that wasn't just a website so 
              I decided to have a bit of fun with it.</p><hr/>
             <h2>Asset Credits</h2>
-            <p>The monsters and weapons are assets from <a href="https://oldschool.runescape.com/">Old School Runescape</a> by <a href="https://www.jagex.com/">Jagex ltd.</a><br/>
-             This project was inspired by <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a> by <a href="http://orteil.dashnet.org/">Orteil</a> and <a href="http://dashnet.org/">Opti</a>.
+            <p>The monsters and weapons are assets from <a href="https://oldschool.runescape.com/" target="_blank">Old School Runescape</a> by <a href="https://www.jagex.com/" target="_blank">Jagex ltd.</a><br/>
+             This project was inspired by <a href="http://orteil.dashnet.org/cookieclicker/" target="_blank">Cookie Clicker</a> by <a href="http://orteil.dashnet.org/" target="_blank">Orteil</a> and <a href="http://dashnet.org/" target="_blank">Opti</a>.
             </p>
         </div>
         </>

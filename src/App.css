@@ -116,6 +116,11 @@ hr {
   display:none;
 }
 
+a{
+  text-decoration: none;
+  color: #990000;
+}
+
 @media only screen and (min-width: 800px){
   .main-flex-container{
     flex-direction:row;

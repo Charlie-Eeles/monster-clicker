@@ -37,7 +37,8 @@ class App extends Component {
     specialAttack: false,
     party: parseInt(localStorage.getItem("party")) || 0,
     partyCost: parseInt(localStorage.getItem("partyCost")) || 5000,
-    partyCheck: false
+    partyCheck: false,
+    poisonCheck: localStorage.getItem("poisonCheck") || false
     }
 
     
@@ -173,7 +174,16 @@ class App extends Component {
       })
     }
     
+    const PoisonDamage = () => {
+      if (this.state.health <= 1){
+        defeatAndSpawn();
+      }else{
+      this.setState((prevState) => ({
+        health: prevState.health - 1
+      }))}
+    }
 
+    
     // Secondary State Changing Functions (Directly updates more than 1 state) //
 
 
@@ -203,7 +213,7 @@ class App extends Component {
       
     const partyMember = () => {
       if (this.state.goldCounter >= this.state.partyCost){
-        if(this.state.party === 0 && this.state.partyCheck === false){
+        if(this.state.party === 0 && this.state.partyCheck == false){
           this.setState({partyCheck: true})
           setInterval(partyCount, 3000)}
         this.setState((prevState) => ({
@@ -217,7 +227,7 @@ class App extends Component {
         }else(console.log("you dont have enough monayy"));
     }  
 
-    const partyStart = () => {if(this.state.party > 0 && this.state.partyCheck === false){
+    const partyStart = () => {if(this.state.party > 0 && this.state.partyCheck == false){
       this.setState({partyCheck: true})
       setInterval(partyCount, 3000)}}
     
@@ -258,8 +268,30 @@ class App extends Component {
         specialAttack: false,
         party:0,
         partyCost:5000,
-        partyCheck: false
+        partyCheck: false,
+        poisonCheck: false
       })
+      localStorage.removeItem("selector");
+      localStorage.removeItem("weaponDamage");
+      localStorage.removeItem("health");
+      localStorage.removeItem("monsterCount");
+      localStorage.removeItem("goldCounter");
+      localStorage.removeItem("weaponTier");
+      localStorage.removeItem("disabled");
+      localStorage.removeItem("party");
+      localStorage.removeItem("partyCost");
+      localStorage.removeItem("poisonCheck");
+    }
+
+    const poisonWeapon = () => {
+      if(this.state.goldCounter >= 50000 && this.state.poisonCheck == false){
+        this.setState((prevState) => ({
+          goldCounter: prevState.goldCounter - 50000,
+          poisonCheck: true
+        }))
+        localStorage.setItem("goldCounter", this.state.goldCounter - 50000);
+        localStorage.setItem("poisonCheck", true);
+      }else{console.log("you can't afford that.")}
     }
 
 
@@ -278,6 +310,17 @@ class App extends Component {
         defeatAndSpawn();
       }else{
           dealDamage();
+          if(this.state.poisonCheck == "true"){
+            setTimeout(() => {
+              PoisonDamage();
+              setTimeout(() => {
+                PoisonDamage();
+                setTimeout(() => {
+                  PoisonDamage();
+                }, 1500);
+              }, 1500);
+            }, 1500);
+          } 
       }
       } 
 
@@ -293,6 +336,8 @@ class App extends Component {
             partyCost={this.state.partyCost}
             party={this.state.party}
             reset={reset}
+            poisonWeapon={poisonWeapon}
+            poisonCheck={this.state.poisonCheck}
         />
       );
     }

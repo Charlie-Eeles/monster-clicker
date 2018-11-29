@@ -2,6 +2,8 @@ import React from 'react';
 import PartyMember from './PartyMember';
 import Weapons from './Weapons';
 import {Route, Link, BrowserRouter as Router} from 'react-router-dom';
+import Poison from './Poison';
+
 const Shop = (props) => {
 
     
@@ -22,6 +24,10 @@ const Shop = (props) => {
                     partyMember={props.partyMember}
                     partyCost={props.partyCost}
                     party={props.party}/>
+                <Poison
+                    poisonWeapon={props.poisonWeapon}
+                    poisonCheck={props.poisonCheck}
+                />
             </div>
             <button onClick={() => {window.confirm("This will permanently delete your save data.\nAre you sure you want to reset everything? ") && props.reset()}}>reset</button>
         </div>
