@@ -8,8 +8,8 @@ const Shop = (props) => {
     return(
         <>
         <div className="right-section">
-            <Link to='/'><button className="underline nav-button">Home</button></Link>
-            <Link to='/other'><button className="nav-button">Info</button></Link>
+            <Link to={process.env.PUBLIC_URL + '/'}><button className="underline nav-button">Home</button></Link>
+            <Link to='other'><button className="nav-button">Info</button></Link>
             <div className="shop-grid">
                 <Weapons 
                     weaponName={props.weaponName}

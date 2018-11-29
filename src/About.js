@@ -9,8 +9,8 @@ const About = (props) => {
     return(
         <>
         <div className="right-section">
-            <Link to='/'><button className="nav-button">Home</button></Link>
-            <Link to='/other'><button className="underline nav-button">Info</button></Link>
+            <Link to={process.env.PUBLIC_URL + '/'}><button className="nav-button">Home</button></Link>
+            <Link to='other'><button className="underline nav-button">Info</button></Link>
             <h1>About this Project</h1>
             <p>This game is made with React by Charlie Eeles.</p><hr/>
             <p>Clicking on a monster will deal damage set by the weapon you're using, 
