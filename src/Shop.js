@@ -5,8 +5,6 @@ import {Route, Link, BrowserRouter as Router} from 'react-router-dom';
 const Shop = (props) => {
 
     
-
-
     return(
         <>
         <div className="right-section">
@@ -25,7 +23,7 @@ const Shop = (props) => {
                     partyCost={props.partyCost}
                     party={props.party}/>
             </div>
-            <button onClick={props.reset}>reset</button>
+            <button onClick={() => {window.confirm("This will permanently delete your save data.\nAre you sure you want to reset everything? ") && props.reset()}}>reset</button>
         </div>
         </>
     );
