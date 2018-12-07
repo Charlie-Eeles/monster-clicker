@@ -38,7 +38,8 @@ class App extends Component {
     party: parseInt(localStorage.getItem("party")) || 0,
     partyCost: parseInt(localStorage.getItem("partyCost")) || 5000,
     partyCheck: false,
-    poisonCheck: localStorage.getItem("poisonCheck") || false
+    poisonCheck: localStorage.getItem("poisonCheck") || false,
+    errorMessage: ""
     }
 
     
@@ -183,7 +184,12 @@ class App extends Component {
       }))}
     }
 
-    
+    const clearError = () => {
+      this.setState({
+        errorMessage: ""
+      })
+    }
+
     // Secondary State Changing Functions (Directly updates more than 1 state) //
 
 
@@ -207,7 +213,12 @@ class App extends Component {
             localStorage.setItem("weaponDamage", arsenal[this.state.weaponTier].damage);
             localStorage.setItem("goldCounter", this.state.goldCounter - arsenal[this.state.weaponTier].price);
             localStorage.setItem("disabled", true);
-        }}else{console.log("you don't have enough mulah")}
+        }}else{
+          this.setState({
+            errorMessage: "You can't afford that."
+          })
+          setTimeout(clearError, 5000)
+        }
       }
 
       
@@ -224,7 +235,10 @@ class App extends Component {
         localStorage.setItem("goldCounter", this.state.goldCounter - this.state.partyCost);
         localStorage.setItem("party", this.state.party +1);
         localStorage.setItem("partyCost", Math.ceil((this.state.partyCost) * 1.5));
-        }else(console.log("you dont have enough monayy"));
+        }else{this.setState({
+          errorMessage: "You can't afford their price."
+        })
+        setTimeout(clearError, 5000)};
     }  
 
     const partyStart = () => {if(this.state.party > 0 && this.state.partyCheck == false){
@@ -244,7 +258,7 @@ class App extends Component {
     }
 
     const specialAttack = () => {
-      if (arsenal[this.state.weaponTier].damage >4){
+      if (arsenal[this.state.weaponTier].damage >5){
       this.setState((prevState) => ({
         specialAttack: true,
         health: prevState.health - prevState.health
@@ -253,7 +267,10 @@ class App extends Component {
         defeatAndSpawn();
         defeatAndSpawn();
         setTimeout(enableSpecialAttack, 10000)
-      }else{console.log("your weapon has no special attack")}
+      }else{this.setState({
+        errorMessage: "Your weapon has no special attack."
+      })
+      setTimeout(clearError, 5000)}
     }
     
     const reset = () => {
@@ -291,7 +308,10 @@ class App extends Component {
         }))
         localStorage.setItem("goldCounter", this.state.goldCounter - 50000);
         localStorage.setItem("poisonCheck", true);
-      }else{console.log("you can't afford that.")}
+      }else{this.setState({
+        errorMessage: "Poison doesn't come cheap."
+      })
+      setTimeout(clearError, 4000)}
     }
 
 
@@ -338,6 +358,7 @@ class App extends Component {
             reset={reset}
             poisonWeapon={poisonWeapon}
             poisonCheck={this.state.poisonCheck}
+            errorMessage={this.state.errorMessage}
         />
       );
     }

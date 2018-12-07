@@ -15,9 +15,9 @@ const About = (props) => {
             <p>This game is made with React by Charlie Eeles.</p><hr/>
             <p>Clicking on a monster will deal damage set by the weapon you're using, 
             defeating monsters will give you gold that you can use to upgrade your
-            weapon and hire party members to fight for you.<br/> The special attack is 
+            weapon and hire party members to fight for you.<br/> Poisoning your weapon will cause continuous damage every hit.<br/> The special attack is 
             an AOE that kills 3 monsters at once but can't be used until you have at least
-            a bow.<br/>Monsters are generated randomly and a boss will show up every 5 monsters.</p><hr/>
+            a hammer.<br/>Monsters are generated randomly and a boss will show up every 5 monsters.</p><hr/>
             <h2>Why?</h2>
             <p>I wanted to make something in React that wasn't just a website so 
              I decided to have a bit of fun with it.</p><hr/>

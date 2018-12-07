@@ -30,6 +30,7 @@ const Shop = (props) => {
                 />
             </div>
             <button onClick={() => {window.confirm("This will permanently delete your save data.\nAre you sure you want to reset everything? ") && props.reset()}}>reset</button>
+            <p>{props.errorMessage}</p>
         </div>
         </>
     );
