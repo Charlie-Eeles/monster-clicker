@@ -106,22 +106,22 @@ class App extends Component {
       damage: 5,
       price: 20000},
 
-      {weaponName: "scimitar",
+      {weaponName: "Scimitar",
       img: scimitar, 
       damage: 6,
       price: 40000},
 
-      {weaponName: "battleAxe",
+      {weaponName: "BattleAxe",
       img:battleAxe,
       damage: 7,
       price: 80000},
 
-      {weaponName: "greatAxe",
+      {weaponName: "Great Axe",
       img: greatAxe, 
       damage: 10,
       price: 150000},
 
-      {weaponName: "godSword",
+      {weaponName: "God Sword",
       img:godSword,
       damage: 15,
       price: 300000},

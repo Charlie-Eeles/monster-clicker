@@ -7,7 +7,7 @@ const Poison = (props) => {
 
     return(
         <>
-        <button onClick={props.poisonWeapon} disabled={props.poisonCheck} ><img src={poisonVial} className="weaponClass"></img><br/>Poison your weapon: 75,000g</button>
+        <button onClick={props.poisonWeapon} disabled={props.poisonCheck} ><img src={poisonVial} className="weaponClass" alt="Poison Vial"></img><br/>Poison your weapon: 75,000g</button>
         </>
     );
 
